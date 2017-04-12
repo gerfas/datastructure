@@ -7,6 +7,7 @@ generic
 
 
 package dbinarytree is
+
    type tree is limited private;
    type list is limited private;
    type pnode is limited private;
@@ -14,19 +15,15 @@ package dbinarytree is
 
    bad_use:        exception;
    space_overflow: exception;
-   -- list methods
+
+   -- list procedures & functions
    procedure emptylist   (a: out list);
    procedure insert      (l: in out list; x: in item);
-   procedure print       (l: in list);
+   procedure print_list  (l: in list);
    function compare_list (l1, l2: in list) return Boolean;
 
-   -- tree methods
+   -- tree procedures & functions
    procedure empty       (t: out tree);
-   function is_empty     (t: in  tree) return boolean;
-   procedure graft       (t: out tree; lt, rt: in tree; x: in item);
-   procedure root        (t: in  tree; x: out item);
-   procedure left        (t: in tree; lt: out tree);
-   procedure right       (t: in tree; rt: out tree);
    procedure first_tree  (inlist, prelist: in out list; btree: out  tree);
    procedure create_tree (btree: in out list; children: out pnode; parent: in out pcell);
    procedure inorden     (t: in pnode; inolist: out list);
@@ -49,7 +46,8 @@ private
       record
          root: pnode;
       end record;
---list
+
+   --list
    type cell;
    type pcell is access cell;
 

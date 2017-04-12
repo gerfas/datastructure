@@ -42,10 +42,10 @@ begin
 
       --print lists
       Put("Inorder list: ");
-      print(inlist);
+      print_list(inlist);
       Put_Line("");
       Put("Preorder list: ");
-      print(prelist);
+      print_list(prelist);
       Put_Line("");
 
       -- create tree from inorder & preorder lists
@@ -54,19 +54,19 @@ begin
 
       -- check if the final tree is correct
       if arbre_correcte(final_tree, inlist) then
-         Put_Line("correcto: 1");
+         Put_Line("Arbre Correcte: 1");
          put(F_Salida, '1');
       else
-         Put_Line("correcto: 0");
+         Put_Line("Arbre Correcte: 0");
          put(F_Salida, '0');
       end if;
 
-      --check if the final tree is Binary Search Tree
+      --check if the final tree is a Binary Search Tree
       if es_ACB(final_tree) then
-         Put_Line("acb: 1");
+         Put_Line("Es ACB: 1");
          put(F_Salida, '1');
       else
-         Put_Line("acb: 0");
+         Put_Line("Es ACB: 0");
          put(F_Salida, '0');
       end if;
 
